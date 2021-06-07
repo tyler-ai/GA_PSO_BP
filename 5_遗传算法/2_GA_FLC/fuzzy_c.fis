@@ -1,0 +1,47 @@
+[System]
+Name='fuzzy_c'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='mom'
+
+[Input1]
+Name='F'
+Range=[-1 1]
+NumMFs=3
+MF1='NL':'zmf',[-1 -0.684603434790711]
+MF2='ZR':'trimf',[-0.684603434790711 0 0.228554762505638]
+MF3='PL':'smf',[0.228554762505638 1]
+
+[Input2]
+Name='L'
+Range=[-1 1]
+NumMFs=3
+MF1='NL':'zmf',[-1 -0.71693432758891]
+MF2='ZR':'trimf',[-0.71693432758891 0 0.0838064765580231]
+MF3='PL':'smf',[0.0838064765580231 1]
+
+[Output1]
+Name='detae'
+Range=[-1 1]
+NumMFs=3
+MF1='NL':'zmf',[-1 -0.945859955451687]
+MF2='ZR':'trimf',[-0.945859955451687 0 0.630808372258908]
+MF3='PL':'smf',[0.630808372258908 1]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 1 (1) : 1
+2 1, 3 (1) : 1
+2 2, 1 (1) : 1
+2 3, 1 (1) : 1
+3 1, 3 (1) : 1
+3 2, 1 (1) : 1
+3 3, 2 (1) : 1
